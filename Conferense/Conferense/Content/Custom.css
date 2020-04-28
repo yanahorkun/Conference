@@ -1,0 +1,289 @@
+﻿
+* {
+    color: #7d7d7d;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h5, h6 {
+    color: #5bd0ff;
+}
+
+.h1, h1 {
+    font-size: 2.3rem;
+}
+
+.h2, h2 {
+    font-size: 1.7rem;
+}
+
+.navbar-brand img {
+    width: 80px;
+}
+
+.main .container .row {
+    margin: auto 0;
+    align-content: center;
+}
+
+ol {
+    padding: 1rem 0 0 1.2rem;
+}
+
+    ol li {
+        margin-bottom: 0.7rem;
+    }
+
+.rowMain {
+    padding: 120px 0 180px 0;
+}
+
+.hiddenInfo img {
+    padding: 0 40px;
+}
+
+.rowDirections {
+    padding: 120px 0 100px 0;
+}
+
+.rowDirections2 {
+    padding: 0px 0 120px 0;
+}
+
+.bg-light {
+    background-color: #fff !important;
+}
+
+.dropdown-menu {
+    border: 1px solid rgb(239, 239, 239);
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+    color: #5bd0ff;
+}
+
+.dropdown-item {
+    color: #7d7d7d;
+}
+
+.main .col-5, .main .form-group {
+    padding: 0;
+}
+
+.rowForm {
+    justify-content: space-between;
+}
+
+.ulEnterMain a {
+    color: #7d7d7d;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #7d7d7d;
+    border-color: #7d7d7d;
+    border-radius: 60px;
+    padding: 0.5em 3em;
+    font-size: 1.5rem;
+    margin: 2rem auto 0 auto;
+}
+
+    .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+        background-color: #5bd0ff;
+        border: #5bd0ff 1px solid;
+        box-shadow: 0 0 0 0rem rgba(0,0,0,0);
+    }
+
+    .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+        color: #fff;
+        background-color: #5bd0ff;
+        border-color: #5bd0ff;
+    }
+
+        .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0,0,0,0);
+        }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #5bd0ff;
+    border-bottom: 4px solid #5bd0ff;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.programm {
+    background-image: url(images/bg.png);
+    background-repeat: no-repeat;
+}
+
+.importantDates {
+    background-image: url(images/bg2.png);
+    background-repeat: no-repeat;
+    background-position-y: 115%;
+}
+
+.ulEnterMain {
+    justify-content: flex-start;
+    margin: 2rem 0 !important;
+}
+
+    .ulEnterMain li:first-child {
+        padding-right: 2rem !important;
+    }
+
+.buttonEnter {
+    margin: 0 auto !important;
+}
+
+.rowPerson, .rowRules {
+    padding: 60px 0 120px 0;
+}
+
+.personItem {
+    margin-right: 138px;
+    padding: 0;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+}
+
+    .personItem:last-child {
+        margin-right: 0px;
+    }
+
+    .personItem img {
+        width: 100%;
+    }
+
+    .personItem p {
+        padding: 0.5rem 0 0 0;
+        font-size: 1rem;
+        margin: 0;
+    }
+
+.personInfo {
+    padding: 1rem 0;
+}
+
+@media screen and (max-width: 1300px) {
+    .hiddenInfo {
+        display: none;
+    }
+
+    .personInfo {
+        padding: 0rem 0;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+        padding-top: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .studentMaterial {
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+        .studentMaterial:last-child {
+            margin: 0 0 1em 0 !important;
+        }
+
+    .personItem {
+        margin-right: 0px;
+    }
+
+    .main {
+        background-image: none;
+    }
+
+    .programm {
+        background-image: none;
+        background-color: #efefef;
+    }
+
+    .importantDates {
+        background-image: none;
+        background-color: #efefef;
+    }
+
+    .secretariat {
+        padding-top: 60px;
+    }
+
+    .forStudents {
+        font-size: 15px;
+    }
+
+    .studentMaterial a {
+        font-size: 1rem;
+    }
+
+    .rowRules {
+        padding: 60px 0 60px 0;
+    }
+
+    .footerUl {
+        margin-top: 4rem;
+    }
+}
+
+.rules p {
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+}
+
+.studentMaterial {
+    background-color: #efefef;
+    padding: 40px 20px;
+    border-radius: 5%;
+    margin: 0 0 2rem 0;
+}
+
+    .studentMaterial:last-child {
+        margin: 0 0 0em 0;
+    }
+
+.main .container .row {
+    justify-content: space-between;
+}
+
+.studentMaterial a {
+    color: #7c7c7c;
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: transparent;
+}
+
+    .studentMaterial a:hover {
+        color: #5bd0ff;
+    }
+
+.rules ol {
+    padding: 0em 0 0 1.2rem;
+}
+
+footer {
+    background-color: #efefef;
+}
+
+.footerUl {
+    margin-top: 6rem;
+}
+
+    .footerUl a {
+        color: #7c7c7c;
+        text-decoration: none;
+        font-size: 1rem;
+        background-color: transparent;
+    }
+
+        .footerUl a:hover {
+            color: #5bd0ff;
+        }

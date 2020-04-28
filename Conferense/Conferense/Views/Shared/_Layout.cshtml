@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/Home/Home"><img src="~/Content/images/logo.png" alt="NT"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Головна <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Інформація
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item clikblock1" href="#programm">Напрямки роботи конференції</a>
+                            <a class="dropdown-item clikblock2" href="#importantDates">Важливі дати</a>
+                            <a class="dropdown-item clikblock3" href="#address">Адреса</a>
+                            <a class="dropdown-item clikblock4" href="#secretariat">Секретаріат</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Учасникам
+                        </a>
+                        <div class="dropdown-menu clikblock5" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item clikblock5" href="#forStudents">Вимоги до тез доповідей</a>
+                            <a class="dropdown-item  clikblock5" href="#forStudents">Зразок оформлення тез доповідей</a>
+                            <a class="dropdown-item  clikblock5" href="#forStudents">Завантаженні статті автора</a>
+                            <a class="dropdown-item  clikblock5" href="#forStudents">Завантаженні статті всіх авторів</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link clikblock4" href="#secretariat">Контакти</a>
+                    </li>
+                    <li class="nav-item">
+                        @Html.Partial("_LoginPartial")
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
