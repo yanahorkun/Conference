@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -28,9 +30,31 @@ namespace Conferense.Models //84aP@E&39uzxC1ka0
             return userIdentity;
         }
     }
+    public class SetFile 
+    {
+        public int Id { get; set; }
+        public string UserId { get; set; }
+        public string Name { get; set; }
+        public byte[] File { get; set; }
+
+    }
+
+    [Table("SetInfos")]
+    public class SetInfo 
+    {
+        public int Id { get; set; }
+       
+        public string data1 { get; set; }
+        public string data2 { get; set; }
+        public string data3 { get; set; }
+        public string data4 { get; set; }
+        public string data5 { get; set; }
+    }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<SetFile> Files { get; set; }
+        public DbSet<SetInfo> Infos { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

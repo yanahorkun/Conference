@@ -23,6 +23,11 @@ h1, h2, h3, h5, h6 {
 .main .container .row {
     margin: auto 0;
     align-content: center;
+    align-items: center;
+}
+
+.colDirections {
+    height: 300px;
 }
 
 ol {
@@ -120,7 +125,7 @@ ol {
 .importantDates {
     background-image: url(images/bg2.png);
     background-repeat: no-repeat;
-    background-position-y: 115%;
+    background-position-y: 127%;
 }
 
 .ulEnterMain {
@@ -287,3 +292,22 @@ footer {
         .footerUl a:hover {
             color: #5bd0ff;
         }
+
+.topButton {
+    position: fixed;
+    top: 80%;
+    right: 1%;
+    background-color: #7c7c7c;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    padding: 16px;
+}
+
+    .topButton:hover {
+        background-color: #5bd0ff;
+    }
+
+    .topButton:focus {
+        outline: none;
+        outline: 0px;
+    }

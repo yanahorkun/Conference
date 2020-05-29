@@ -49,7 +49,7 @@ namespace Conferense.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Адрес электронной почты")]
+        [Display(Name = "Адреса електронної скриньки")]
         [EmailAddress]
         public string Email { get; set; }
 
@@ -58,7 +58,7 @@ namespace Conferense.Models
         [Display(Name = "Пароль")]
         public string Password { get; set; }
 
-        [Display(Name = "Запомнить меня")]
+        [Display(Name = "Запам'ятати мене")]
         public bool RememberMe { get; set; }
     }
 
@@ -111,6 +111,14 @@ namespace Conferense.Models
         [Display(Name = "Подтверждение пароля")]
         [Compare("Password", ErrorMessage = "Пароль и его подтверждение не совпадают.")]
         public string ConfirmPassword { get; set; }
+    }
+
+    public class RegisterLoginViewModel
+    {
+        public LoginViewModel LoginViewModel { get; set; }
+        public RegisterViewModel RegisterViewModel { get; set; }
+
+        public SetInfo setInfo { get; set; }
     }
 
     public class ResetPasswordViewModel

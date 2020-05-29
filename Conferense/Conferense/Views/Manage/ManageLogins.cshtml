@@ -3,7 +3,13 @@
 @{
     ViewBag.Title = "Управление внешними именами входа";
 }
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById("navbarNavDropdown").style.display = "none";
+            document.getElementById("address").style.visibility = "hidden";
+}, false);
 
+    </script>
 <h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>

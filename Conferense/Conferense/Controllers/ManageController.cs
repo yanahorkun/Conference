@@ -7,6 +7,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Conferense.Models;
+using System.IO;
+using System.Data.Entity;
+using System.Net;
 
 namespace Conferense.Controllers
 {
@@ -15,6 +18,7 @@ namespace Conferense.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        ApplicationDbContext db = new ApplicationDbContext();
 
         public ManageController()
         {
@@ -55,8 +59,8 @@ namespace Conferense.Controllers
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Ваш пароль изменен."
-                : message == ManageMessageId.SetPasswordSuccess ? "Пароль задан."
+                message == ManageMessageId.ChangePasswordSuccess ? "Ваш пароль змінено."
+                : message == ManageMessageId.SetPasswordSuccess ? "Пароль заданий."
                 : message == ManageMessageId.SetTwoFactorSuccess ? "Настроен поставщик двухфакторной проверки подлинности."
                 : message == ManageMessageId.Error ? "Произошла ошибка."
                 : message == ManageMessageId.AddPhoneSuccess ? "Ваш номер телефона добавлен."
@@ -275,6 +279,80 @@ namespace Conferense.Controllers
 
             // Это сообщение означает наличие ошибки; повторное отображение формы
             return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult ShowAllFiles() 
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            return View(db.Files.ToList());
+        }
+
+        [HttpGet]
+        public ActionResult SetInfo() 
+        {
+            //ApplicationDbContext db = new ApplicationDbContext();
+            SetInfo si = db.Infos.Find(1);
+            if (si != null)
+            {
+                return View(si);
+            }
+            //return View(db.Infos.ToList());
+            return HttpNotFound();
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult SetInfo(SetInfo setInfo) 
+        {
+            if (setInfo != null)
+            {
+                db.Entry(setInfo).State = EntityState.Modified;
+               
+                //db.SaveChanges();
+                return RedirectToAction("Index", "Manage");
+                //return View(setInfo);
+            }
+            else
+                return HttpNotFound();
+        }
+
+
+        public ActionResult SetFile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> SetFile(HttpPostedFileBase file, SetFileViewModel setFile)
+        {
+            string[] err = new string[1] 
+            { "Файл порожній, або не підтримується системою"}; 
+            if (ModelState.IsValid)
+            {
+                if (setFile.File != null && setFile.File.ContentLength > 0)
+                {
+                    //Zdecya mocha syela govno
+                    byte[] fileByteArray = new byte[setFile.File.ContentLength];
+                    //setFile.File.InputStream.Read(fileByteArray, 0, setFile.File.ContentLength);
+                    var result = await setFile.File.InputStream.ReadAsync(fileByteArray, 0, setFile.File.ContentLength);
+                    //new obj += save to db
+                    SetFile setFile1 = new SetFile();
+                    setFile1.File = fileByteArray;
+                    setFile1.Name = setFile.File.FileName;
+                    setFile1.UserId = User.Identity.GetUserId();
+                    ApplicationDbContext db = new ApplicationDbContext();
+                    db.Files.Add(setFile1);
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "Manage");
+                }
+                else 
+                {
+                    AddErrors(new IdentityResult(err));
+                }
+            }
+            return View(setFile);
         }
 
         //

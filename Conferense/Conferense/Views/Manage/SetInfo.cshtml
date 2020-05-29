@@ -1,0 +1,85 @@
+﻿@model Conferense.Models.SetInfo
+@{
+    ViewBag.Title = "Редактор титульної сторінки";
+}
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById("header").style.display = "none";
+            document.getElementById("address").style.visibility = "hidden";
+}, false);
+
+    </script>
+@Html.AntiForgeryToken()
+
+<div class="main">
+    <div class="container">
+        <div class="row rowMain">
+            <div class="col-lg-12 col-sm-12">
+                @using (Html.BeginForm("SetInfo", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <fieldset>
+
+                        @Html.AntiForgeryToken()
+
+                        <h4>Редактор данних для головної сторінки</h4>
+                        <hr />
+                        <div class="form-group">
+                            @Html.Label("Колонка данных 1")
+                            <div class="col-md-10">
+                                @Html.EditorFor(m => m.data1, new { @class = ".multi-line { height:50em; width:50em; }" })
+                                <small class="text-danger">
+                                    @Html.ValidationMessageFor(m => m.data1)
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Колонка данных 2")
+                            <div class="col-md-10">
+                                @Html.EditorFor(m => m.data2, new { @class = "form-control" })
+                                <small class="text-danger">
+                                    @Html.ValidationMessageFor(m => m.data2)
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Колонка данных 3")
+                            <div class="col-md-10">
+                                @Html.EditorFor(m => m.data3, new { @class = ".multi-line { height:5em; width:5em; }" })
+                                <small class="text-danger">
+                                    @Html.ValidationMessageFor(m => m.data3)
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Колонка данных 4")
+                            <div class="col-md-10">
+                                @Html.EditorFor(m => m.data4, new { @class = ".multi-line { height:5em; width:5em; }" })
+                                <small class="text-danger">
+                                    @Html.ValidationMessageFor(m => m.data4)
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Колонка данных 5")
+                            <div class="col-md-10">
+                                @Html.EditorFor(m => m.data5, new { @class = ".multi-line { height:5em; width:5em; }" })
+                                <small class="text-danger">
+                                    @Html.ValidationMessageFor(m => m.data5)
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Зберегти зміни" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </fieldset>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }

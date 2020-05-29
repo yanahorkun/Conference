@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+
 
 namespace Conferense.Models
 {
@@ -14,6 +16,7 @@ namespace Conferense.Models
         public bool BrowserRemembered { get; set; }
         public string Status { get; set; }
     }
+
 
     public class ManageLoginsViewModel
     {
@@ -29,33 +32,56 @@ namespace Conferense.Models
     public class SetPasswordViewModel
     {
         [Required]
-        [StringLength(100, ErrorMessage = "Значение {0} должно содержать символов не менее: {2}.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Значення {0} повинно вміщати більше: {2}.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Новый пароль")]
+        [Display(Name = "Новий пароль")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Подтверждение нового пароля")]
-        [Compare("NewPassword", ErrorMessage = "Новый пароль и его подтверждение не совпадают.")]
+        [Display(Name = "Підтвердження нового пароля")]
+        [Compare("NewPassword", ErrorMessage = "Новий пароль і його підтвердження не співпадають.")]
         public string ConfirmPassword { get; set; }
+    }
+
+    public class SetFileViewModel
+    {
+        public int Id { get; set; }
+        public string UserId { get; set; }
+        [Display(Name = "Виберіть файл")]
+        [Required(ErrorMessage = "Не вірний формат файлу. Приймаються файли типу .doc та .txt")]
+        public HttpPostedFileBase File { get; set; }
+    }
+
+    public class SetInfoViewModel 
+    {
+        [Display(Name = "Колонка данных 1")]
+        public string data1 { get; set; }
+        [Display(Name = "Колонка данных 1")]
+        public string data2 { get; set; }
+        [Display(Name = "Колонка данных 1")]
+        public string data3 { get; set; }
+        [Display(Name = "Колонка данных 1")]
+        public string data4 { get; set; }
+        [Display(Name = "Колонка данных 1")]
+        public string data5 { get; set; }
     }
 
     public class ChangePasswordViewModel
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Текущий пароль")]
+        [Display(Name = "Поточний пароль")]
         public string OldPassword { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "Значение {0} должно содержать символов не менее: {2}.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Новый пароль")]
+        [Display(Name = "Новий пароль")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Подтверждение нового пароля")]
-        [Compare("NewPassword", ErrorMessage = "Новый пароль и его подтверждение не совпадают.")]
+        [Display(Name = "Підтверждення нового пароля")]
+        [Compare("NewPassword", ErrorMessage = "Новий пароль і його підтвердження не співпадають.")]
         public string ConfirmPassword { get; set; }
     }
 
