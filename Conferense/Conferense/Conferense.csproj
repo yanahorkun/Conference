@@ -183,6 +183,30 @@
     <Compile Include="Migrations\202004261436222_Add Custom fields.Designer.cs">
       <DependentUpon>202004261436222_Add Custom fields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004301830585_file.cs" />
+    <Compile Include="Migrations\202004301830585_file.Designer.cs">
+      <DependentUpon>202004301830585_file.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005012106332_set.cs" />
+    <Compile Include="Migrations\202005012106332_set.Designer.cs">
+      <DependentUpon>202005012106332_set.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005012118268_def.cs" />
+    <Compile Include="Migrations\202005012118268_def.Designer.cs">
+      <DependentUpon>202005012118268_def.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005030949208_n.cs" />
+    <Compile Include="Migrations\202005030949208_n.Designer.cs">
+      <DependentUpon>202005030949208_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005031504324_newP.cs" />
+    <Compile Include="Migrations\202005031504324_newP.Designer.cs">
+      <DependentUpon>202005031504324_newP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005031724250_neP.cs" />
+    <Compile Include="Migrations\202005031724250_neP.Designer.cs">
+      <DependentUpon>202005031724250_neP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -199,6 +223,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Custom.css" />
     <Content Include="Content\images\1.png" />
+    <Content Include="Content\images\2.png" />
+    <Content Include="Content\images\3.png" />
+    <Content Include="Content\images\arrows.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\bg.png" />
     <Content Include="Content\images\bg2.png" />
@@ -233,6 +260,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\JavaScriptHide.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -358,9 +386,14 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Manage\SetFile.cshtml" />
+    <Content Include="Views\Manage\ShowAllFiles.cshtml" />
+    <Content Include="Views\Manage\SetInfo.cshtml" />
+    <Content Include="Views\Home\_RegisterLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Master\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -373,6 +406,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004261436222_Add Custom fields.resx">
       <DependentUpon>202004261436222_Add Custom fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004301830585_file.resx">
+      <DependentUpon>202004301830585_file.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005012106332_set.resx">
+      <DependentUpon>202005012106332_set.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005012118268_def.resx">
+      <DependentUpon>202005012118268_def.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005030949208_n.resx">
+      <DependentUpon>202005030949208_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005031504324_newP.resx">
+      <DependentUpon>202005031504324_newP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005031724250_neP.resx">
+      <DependentUpon>202005031724250_neP.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

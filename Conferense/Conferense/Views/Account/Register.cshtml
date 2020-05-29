@@ -3,92 +3,259 @@
     ViewBag.Title = "Регистрация";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="main">
+    <div class="container">
+        <div class="row rowMain">
+            <div class="col-lg-6 col-sm-12">
+                <h1>Конференція молодих учених</h1>
+                <p>Щорічна конференція молодих учених, що проводиться кафедрою мережевих та інтернет технологій. Зареєструватися на конференцію, або увійти до власного кабінету можна заповнивши форму знизу</p>
+                <ul class="nav nav-pills mb-3 ulEnterMain" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-singIn-tab" data-toggle="pill" href="#pills-singIn" role="tab" aria-controls="pills-singIn" aria-selected="false">@Html.ActionLink("Ввійти", "Login", "Account")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-singUp-tab" data-toggle="pill" href="#pills-singUp" role="tab" aria-controls="pills-singUp" aria-selected="true">Реєстрація</a>
+                    </li>
+                </ul>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Создание новой учетной записи.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.FullName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
-            <small class="text-danger">
-                @Html.ValidationMessageFor(m => m.FullName)
-            </small>
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-singIn" role="tabpanel" aria-labelledby="pills-singIn-tab">
+                        <div class="row">
+                            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-group col-12">
+                                    @Html.LabelFor(m => m.FullName, new { @class = "control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+                                        <small class="text-danger">
+                                            @Html.ValidationMessageFor(m => m.FullName)
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12">
+                                    @Html.LabelFor(m => m.Job_Education, new { @class = "control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Job_Education, new { @class = "form-control" })
+                                        <small class="text-danger">
+                                            @Html.ValidationMessageFor(m => m.Job_Education)
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12">
+                                    @Html.LabelFor(m => m.Scientist, new { @class = "control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Scientist, new { @class = "form-control" })
+                                        <small class="text-danger">
+                                            @Html.ValidationMessageFor(m => m.Scientist)
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12">
+                                    @Html.LabelFor(m => m.Participation, new { @class = "control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Participation, new { @class = "form-control" })
+                                        <small class="text-danger">
+                                            @Html.ValidationMessageFor(m => m.Participation)
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12">
+                                    @Html.LabelFor(m => m.Degree, new { @class = "control-label" })
+                                    <div class="col-md-12">
+                                        @Html.TextBoxFor(m => m.Degree, new { @class = "form-control" })
+                                        <small class="text-danger">
+                                            @Html.ValidationMessageFor(m => m.Degree)
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12">
+                                    @Html.LabelFor(m => m.PhoneNumber, new { @class = "control-label" })
+                                    <div class="col-md-12">
+                                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                                        <small class="text-danger">
+                                            @Html.ValidationMessageFor(m => m.PhoneNumber)
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12">
+                                    @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                                    <div class="col-md-12">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group col-12">
+                                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                                    <div class="col-md-12">
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group col-12">
+                                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                                    <div class="col-md-12">
+                                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" class="buttonEnter btn btn-primary mb-2" value="Регєстрація" />
+                                    </div>
+                                </div>
+                            }
+                        </div><!--row-->
+                    </div><!--tabpane-->
+
+                    <div class="tab-pane fade" id="pills-singUp" role="tabpanel" aria-labelledby="pills-singUp-tab">
+                        <div class="row rowForm">
+                           
+                        </div><!--row-->
+
+                    </div><!--tabpane-->
+                </div>
+
+            </div>
+            <div class="col-6 hiddenInfo">
+                <img src="~/Content/images/1.png" alt="">
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Job_Education, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Job_Education, new { @class = "form-control" })
-            <small class="text-danger">
-                @Html.ValidationMessageFor(m => m.Job_Education)
-            </small>
+</div><!--container-->
+<div class="programm stopblock1" id="programm">
+    <div class="container">
+        <div class="row rowDirections ">
+            <div class="col-lg-6 col-sm1-2">
+                <img src="~/Content/images/2.png" alt="">
+            </div>
+            <div class="col-lg-6 col-sm-12 colDirections">
+                <h2>Напрямки роботи конференції</h2>
+                <ol>
+                    <li>Телекомунікаційні системи.</li>
+                    <li>Моделювання інформаційних систем.</li>
+                    <li>Інформаційні системи та технології в освіті, економіці та обороні.</li>
+                    <li>Системи та методи захисту комп’ютерної інформації.</li>
+                    <li>Теоретичні аспекти комп’ютерних наук.</li>
+                    <li>Інтернет речей.</li>
+                </ol>
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Scientist, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Scientist, new { @class = "form-control" })
-            <small class="text-danger">
-                @Html.ValidationMessageFor(m => m.Scientist)
-            </small>
+</div>
+
+<div class="importantDates stopblock2" id="importantDates">
+    <div class="container">
+        <div class="row rowDirections2">
+            <div class="col-lg-6 col-sm-12">
+                <h2>Важливі дати</h2>
+                <ol>
+                    <li>Заповнення заявки на участь (на сайті конференції) (Учасники, до 09 грудня 2019 року).</li>
+                    <li>Надсилання тез доповіді (Учасники, до 12 грудня 2019 року).</li>
+                    <li>Прийняття доповіді (Програмний комітет, до 17 грудня 2019 року).</li>
+                    <li>Надсилання повідомлення про прийняття доповіді (Секретаріат конференції, до 18 грудня 2019 року).</li>
+                    <li>Оплата організаційного внеску за примірник праць конференції (Учасники, до 19 грудня 2019 року, за потреби придбання додаткових примірників – при реєстрації 20 грудня 2019 року).</li>
+                    <li>Надсилання копії квитанції про оплату організаційного внеску за примірник праць конференції на електронну адресу конференції (Учасники, до 19 грудня 2019 року).</li>
+                </ol>
+            </div>
+            <div class="col-lg-6">
+                <img src="~/Content/images/3.png" alt="">
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Participation, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Participation, new { @class = "form-control" })
-            <small class="text-danger">
-                @Html.ValidationMessageFor(m => m.Participation)
-            </small>
+</div>
+
+<div class="secretariat stopblock4" id="secretariat">
+    <div class="container">
+        <h2 align="center">Секретаріат</h2>
+        <div class="row rowPerson">
+            <div class="col-3 personItem">
+                <img src="~/Content/images/dudnik.png" alt="">
+                <div class="personInfo">
+                    <h4>Дуднік<br>Андрій Сергійович</h4>
+                    <p>Секретар конференції</p>
+                    <p>(096) 811-16-79</p>
+                </div>
+            </div>
+            <div class="col-3 personItem">
+                <img src="~/Content/images/mishchenko.png" alt="">
+                <div class="personInfo">
+                    <h4>Міщенко<br>Оксана Миколаївна</h4>
+                    <p> Секретар конференції</p>
+                    <p>(044) 481-45-82</p>
+                </div>
+            </div>
+            <div class="col-3 personItem">
+                <img src="~/Content/images/mahovich.png" alt="">
+                <div class="personInfo">
+                    <h4>Махович<br>Олександр Іванович</h4>
+                    <p>Менеджер конференції</p>
+                    <p>(097) 672-72-36</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Degree, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Degree, new { @class = "form-control" })
-            <small class="text-danger">
-                @Html.ValidationMessageFor(m => m.Degree)
-            </small>
+</div>
+
+
+<div class="forStudents stopblock5" id="forStudents">
+    <div class="container">
+        <h2 align="center">Правила оформлення тез доповідей та умови їх видання</h2>
+        <div class="row rowRules">
+            <div class="rules col-lg-8 col-sm-12">
+                <ol>
+                    <li>До друку приймаються тези доповіді однією з робочих мов конференції, обсяг яких <strong>не перевищує </strong><strong>2</strong><strong>-х сторінок</strong>, включаючи рисунки, таблиці і список використаних джерел. Кількість співавторів – не більше 4 осіб.</li>
+                    <li>Тези доповіді повинні бути підготовлені у форматі А4 за допомогою редактора МS Word. Поля – 2 см з усіх сторін. Файл має бути названий прізвищами всіх авторів. Сторінки не нумеруються.</li>
+                    <li>Тези доповіді мають бути оформлені наступним чином (<strong>див. зразок</strong>):</li>
+                </ol>
+                <ul>
+                    <li>шрифт Тіmes New Roman, кегель 14 рt, інтервал 1;</li>
+                    <li>у лівому верхньому кутку:</li>
+                    <li>УДК;</li>
+                    <li>прізвище та ініціали автора (напівжирним шрифтом);</li>
+                    <li>науковий ступінь, вчене звання, посада;</li>
+                    <li>установа, місто (курсивом).</li>
+                    <li>назва тез (великими літерами, по центру, напівжирним шрифтом);</li>
+                    <li>основний текст (вирівнювання по ширині, абзац 1 см.);</li>
+                    <li>список використаних джерел.</li>
+                </ul>
+                <ol start="4">
+                    <li>
+                        Для назв таблиць, підпису рисунків використовувати вирівнювання по ширині, напівжирним шрифтом. Всі рисунки повинні бути згруповані як єдиний об’єкт. Формули розташовувати по центру з нумерацією по правому краю. При наборі формул використовувати редактор формул МS Office.<br>
+                        <strong>ЗАБОРОНЯЄТЬСЯ ВИКОРИСТОВУВАТИ СКАНОВАНІ ОБ’ЄКТИ!</strong>
+                    </li>
+                </ol>
+                <ol start="5">
+                    <li>Список використаних джерел наводиться у кінці тексту мовою оригіналу. Використані <strong>джерела нумеруються</strong> <strong>відповідно до порядку згадування у тексті</strong>. Посилання на джерело та сторінки у ньому подаються у квадратних дужках за текстом.</li>
+                </ol>
+                <ol start="6">
+                    <li>Право рекомендувати тези доповіді до друку залишається за програмним комітетом.</li>
+                    <li>За результатами розгляду тез доповіді буде прийнято рішення про їх публікацію, про що буде повідомлено авторів.</li>
+                </ol>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <div class="row">
+                    <div class="studentMaterial">
+                        <a href="" download>Завантажити матеріали конференції</a>
+                    </div>
+                    <div class="studentMaterial">
+                        <a href="" download>Завантажити зразок оформлення</a>
+                    </div>
+                    <div class="studentMaterial">
+                        <a href="" download>Завантаженні статтi автора</a>
+                    </div>
+                    <div class="studentMaterial">
+                        <a href="" download>Завантаженні статтi всіх авторів</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rules col-lg-12 col-sm-12">
+                <p align="center"><strong>Увага!</strong></p>
+                <p> До тексту тез доповіді, без узгодження з автором, можуть бути внесенні редакційні правки. Тези студентів друкуються у співавторстві з науковим керівником.</p>
+            </div>
+
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
-            <small class="text-danger">
-                @Html.ValidationMessageFor(m => m.PhoneNumber)
-            </small>
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Регистрация" />
-        </div>
-    </div>
-}
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

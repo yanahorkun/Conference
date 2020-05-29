@@ -1,89 +1,62 @@
 ﻿@model Conferense.Models.IndexViewModel
+@using Microsoft.AspNet.Identity
 @{
-    ViewBag.Title = "Управление";
+    ViewBag.Title = "Сторінка";
 }
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById("navbarNavDropdown").style.display = "none";
+            document.getElementById("address").style.visibility = "hidden";
+}, false);
+    
+    </script>
+    <div class="main">
+        <div class="container">
+            <div class="row rowMain">
+                <div class="col-lg-4 col-sm-12">
+                    <dt>Користувач:</dt>
+                    <dd>
+                        @User.Identity.GetUserName()
+                    </dd>
+                </div>
 
-<h2>@ViewBag.Title.</h2>
+                <div class="col-lg-8 col-sm-12">
+                    <p class="text-success">@ViewBag.StatusMessage</p>
+                    <div>
+                        <h4>Меню</h4>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dd>
+                                <br>
+                            <dt>Завантажте свою конференцію до репозиторію:</dt>
+                            @Html.ActionLink("Завантажити файл конференції", "SetFile")
+                            </dd>
+                            <dd>
+                                <br>
+                            <dt>Можливість перевірити всі завантажені конференції:</dt>
+                            @Html.ActionLink("Переглянути завантажені файли", "ShowAllFiles")
+                            </dd>
+                            <dd>
+                                <br>
+                            <dt>Редактор данних інформаційної сторінки:</dt>
+                            @Html.ActionLink("Редактувати дані на головній сторінці", "SetInfo")
 
-@Model.Status.ToString();
-
-<p class="text-success">@ViewBag.StatusMessage</p>
-<div>
-    <h4>Изменение параметров учетной записи</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>Пароль:</dt>
-        <dd>
-            [
-            @if (Model.HasPassword)
-            {
-                @Html.ActionLink("Смена пароля", "ChangePassword")
-            }
-            else
-            {
-                @Html.ActionLink("Создать", "SetPassword")
-            }
-            ]
-        </dd>
-        <dt>Внешние имена входа:</dt>
-        <dd>
-            @Model.Logins.Count [
-            @Html.ActionLink("Управление", "ManageLogins") ]
-        </dd>
-        @*
-            Номера телефонов можно использовать в качестве второго проверочного фактора для системы двухфакторной проверки подлинности.
-             
-             В <a href="https://go.microsoft.com/fwlink/?LinkId=403804">этой статье</a>
-                можно узнать, как для этого приложения ASP.NET настроить двухфакторную проверку подлинности с использованием SMS.
-             
-             Настроив двухфакторную проверку подлинности, раскомментируйте следующий блок
-        *@
-        @*  
-            <dt>Номер телефона:</dt>
-            <dd>
-                @(Model.PhoneNumber ?? "None")
-                @if (Model.PhoneNumber != null)
-                {
-                    <br />
-                    <text>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</text>
-                    using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>[<input type="submit" value="Удалить" class="btn-link" />]</text>
-                    }
-                }
-                else
-                {
-                    <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
-                }
-            </dd>
-        *@
-        <dt>Двухфакторная проверка подлинности:</dt>
-        <dd>
-            <p>
-                Поставщики двухфакторной проверки подлинности не настроены. В <a href="https://go.microsoft.com/fwlink/?LinkId=403804">этой статье</a>
-                можно узнать, как настроить двухфакторную проверку подлинности для этого приложения ASP.NET.
-            </p>
-            @*@if (Model.TwoFactor)
-                {
-                    using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>Включено
-                        <input type="submit" value="Отключить" class="btn btn-link" />
-                        </text>
-                    }
-                }
-                else
-                {
-                    using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>Отключено
-                        <input type="submit" value="Включить" class="btn btn-link" />
-                        </text>
-                    }
-                }*@
-        </dd>
-    </dl>
-</div>
+                            </dd>
+                            <br>
+                            <dt>Пароль:</dt>
+                            <dd>
+                                @if (Model.HasPassword)
+                                {
+                                    @Html.ActionLink("Змінити пароль", "ChangePassword")
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("Створити пароль", "SetPassword")
+                                }
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

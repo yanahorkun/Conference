@@ -112,8 +112,14 @@ C:\Users\38098\source\repos\Conferense\Conferense\bin\ru\Microsoft.AspNet.Identi
 C:\Users\38098\source\repos\Conferense\Conferense\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.Migrations.InitialCreate.resources
 C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.Migrations.AddCustomfields.resources
+C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.Migrations.file.resources
+C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.Migrations.set.resources
+C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.Migrations.def.resources
+C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.Migrations.n.resources
+C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.Migrations.newP.resources
 C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.csproj.GenerateResource.cache
 C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.csproj.CopyComplete
 C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.dll
 C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.pdb
+C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.Migrations.neP.resources
 C:\Users\38098\source\repos\Conferense\Conferense\obj\Debug\Conferense.csprojAssemblyReference.cache
